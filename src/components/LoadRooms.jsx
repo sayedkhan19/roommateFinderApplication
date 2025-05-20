@@ -1,0 +1,50 @@
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router";
+
+const LoadRooms = () => {
+  const [rooms, setRooms] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/rooms")
+      .then((res) => res.json())
+      .then((data) => setRooms(data))
+      .catch((error) => console.error("Error fetching rooms:", error));
+  }, []);
+
+  return (
+    <div className="mt-5 p-4">
+      <h1 className="text-2xl font-bold mb-6">Total Rooms: {rooms.length}</h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        {rooms.map((room) => (
+          <div
+            key={room._id}
+            className="border rounded-xl shadow-lg p-4 h-[300px] w-full flex gap-4 overflow-hidden"
+          >
+            {/* Image Section */}
+            <div className="h-full w-1/2 overflow-hidden rounded-xl">
+              <img
+                src={room.photoUrl}
+                alt={room.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Text Section */}
+            <div className="w-1/2 flex flex-col justify-between">
+              <div>
+                <h2 className="text-xl font-bold">{room.title || "Room Title"}</h2>
+                <p className="text-sm mt-1 line-clamp-4">
+                  {room.description || "No description available."}
+                </p>
+              </div>
+              <NavLink to={`/detailsroom/${room._id}`} className="btn btn-primary w-full mt-2">View Details</NavLink>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default LoadRooms;
