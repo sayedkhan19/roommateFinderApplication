@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { use } from 'react';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../ptovider/AuthProvider';
 
 const Navbar = () => {
+  const {user} = use(AuthContext);
    const links = 
     <>
       <li>
@@ -56,7 +58,10 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <div className='flex gap-2 justify-center items-center'>
+            <a className="btn btn-ghost text-xl">daisyUI</a>
+            <h1>{user && user.email}</h1>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
