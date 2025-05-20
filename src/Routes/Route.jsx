@@ -5,6 +5,9 @@ import RoomCard from "../pages/RoomCard";
 import LoadRooms from "../components/LoadRooms";
 import DetailsRoom from "../pages/DetailsRoom";
 import ErrorPage from "../pages/ErrorPage";
+import Auth from "../pages2/Auth";
+import LoginAuth from "../pages2/LoginAuth";
+import RegisterAuth from "../pages2/RegisterAuth";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +34,20 @@ export const router = createBrowserRouter([
           Component:DetailsRoom,
           loader:({params})=> fetch(`http://localhost:3000/rooms/${params.id}`),
         }
+    ]
+  },
+  {
+    path:"/auth",
+    Component:Auth,
+    children:[
+      {
+        path:"/auth/login",
+        Component:LoginAuth,
+      },
+      {
+        path:"/auth/register",
+        Component:RegisterAuth,
+      }
     ]
   },
 ]);

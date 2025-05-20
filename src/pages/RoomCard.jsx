@@ -34,57 +34,57 @@ const RoomCard = () => {
   <div className='grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2'>
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">Title</label>
-  <input type="text" className="input w-full" name='title' placeholder="title" />
+  <input type="text" className="input w-full" name='title' placeholder="title" required/>
   </fieldset>
     
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">Location</label>
-  <input type="text" className="input w-full" name='location' placeholder="Location" />
+  <input type="text" className="input w-full" name='location' placeholder="Location" required/>
   </fieldset>
     
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">Rent</label>
-  <input type="text" className="input w-full" name='rent' placeholder="rent" />
+  <input type="text" className="input w-full" name='rent' placeholder="rent" required/>
   </fieldset>
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">roomType</label>
-  <input type="text" className="input w-full" name='roomType' placeholder="roomType" />
+  <input type="text" className="input w-full" name='roomType' placeholder="roomType" required/>
   </fieldset>
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">lifestylePreferences</label>
-  <input type="text" className="input w-full" name='lifestylePreferences' placeholder="lifestylePreferences" />
+  <input type="text" className="input w-full" name='lifestylePreferences' placeholder="lifestylePreferences" required/>
   </fieldset>
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">description</label>
-  <input type="text" className="input w-full" name='description' placeholder="description" />
+  <input type="text" className="input w-full" name='description' placeholder="description" required/>
   </fieldset>
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">contactInfo</label>
-  <input type="text" className="input w-full" name='contactInfo' placeholder="contactInfo" />
+  <input type="text" className="input w-full" name='contactInfo' placeholder="contactInfo" required/>
   </fieldset>
   
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">availability</label>
-  <input type="text" className="input w-full" name='availability' placeholder="availability" />
+  <input type="text" className="input w-full" name='availability' placeholder="availability" required/>
   </fieldset>
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">userEmail</label>
-  <input type="text" className="input w-full" name='userEmail' placeholder="userEmail" />
+  <input type="text" className="input w-full" name='userEmail' placeholder="userEmail" required/>
   </fieldset>
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">userName</label>
-  <input type="text" className="input w-full" name='userName' placeholder="userName" />
+  <input type="text" className="input w-full" name='userName' placeholder="userName" required/>
   </fieldset>
   
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">likeCount</label>
-  <input type="text" className="input w-full" name='likeCount' placeholder="likeCount" />
+  <input type="text" className="input w-full" name='likeCount' placeholder="likeCount" required/>
   </fieldset>
 
   

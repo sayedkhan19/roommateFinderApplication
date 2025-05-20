@@ -18,7 +18,7 @@ const Navbar = () => {
         <NavLink to={""}>My Listings</NavLink>
       </li>
       <li>
-        <NavLink to={"/"}>Login</NavLink>
+        <NavLink to={"/auth/login"}>Login</NavLink>
       </li>
       
       <li>
@@ -62,7 +62,10 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <div className='flex flex-row gap-2 justify-center items-center'>
+            <h1>sayed khan</h1>
+            <button className='btn'>Login</button>
+          </div>
         </div>
       </div>
     </div>
