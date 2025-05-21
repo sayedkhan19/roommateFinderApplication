@@ -8,6 +8,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Auth from "../pages2/Auth";
 import LoginAuth from "../pages2/LoginAuth";
 import RegisterAuth from "../pages2/RegisterAuth";
+import PrivateRoutes from "../ptovider/PrivateRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -31,8 +32,11 @@ export const router = createBrowserRouter([
         },
         {
           path:"detailsroom/:id",
-          Component:DetailsRoom,
+          element:<PrivateRoutes>
+            <DetailsRoom></DetailsRoom>
+          </PrivateRoutes>,
           loader:({params})=> fetch(`http://localhost:3000/rooms/${params.id}`),
+          hydrateFallbackElement:<span className="loading loading-bars loading-xl"></span>,
         }
     ]
   },

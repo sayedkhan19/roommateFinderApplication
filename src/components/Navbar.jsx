@@ -1,33 +1,41 @@
 import React, { use } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../ptovider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
-  const {user} = use(AuthContext);
+  const {user,logOut} = use(AuthContext);
    const links = 
     <>
       <li>
-        <NavLink to={"/"}>Home</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/"}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={""}>Find Roommate</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"gdfs"}>Find Roommate</NavLink>
       </li>
       <li>
-        <NavLink to={""}>Browse Listings</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"fgs"}>Browse Listings</NavLink>
       </li>
       
       <li>
         <NavLink to={""}>My Listings</NavLink>
       </li>
       <li>
-        <NavLink to={"/auth/login"}>Login</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/auth/login"}>Login</NavLink>
       </li>
       
       <li>
-        <NavLink to={"/room"}>faltu</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/room"}>faltu</NavLink>
       </li>
     </>
-  
+  const handleLogOut = () =>{
+      logOut()
+      .then(() => {
+      toast.success("Sign-out successful")
+}).catch((error) => {
+  toast.error(error)
+});
+  }
 
   return (
     <div>
@@ -68,8 +76,23 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className='flex flex-row gap-2 justify-center items-center'>
-            <h1>sayed khan</h1>
-            <button className='btn'>Login</button>
+            {user && (
+              <img
+                className="rounded-full w-10 h-10 object-cover cursor-pointer"
+                src={user.photoURL || "https://i.ibb.co/2kRTPqR/default-user.png"}
+                alt="user profile"
+                title={user.displayName || "User"}
+                onError={(e) =>
+                  (e.currentTarget.src = "https://i.ibb.co/2kRTPqR/default-user.png")
+                  
+
+                }
+              />
+            )}
+            {
+              user ? <NavLink to={'/auth/login'} onClick={handleLogOut} className='btn'>Log out</NavLink> : <NavLink to={"/auth/login"} className='btn'>Login</NavLink>
+            }
+            
           </div>
         </div>
       </div>

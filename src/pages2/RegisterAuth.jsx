@@ -1,9 +1,12 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../ptovider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const RegisterAuth = () => {
-    const {creatUser,setUser} = use(AuthContext);
+    const {creatUser,setUser,updateUser} = use(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handleRegister = e =>{
         e.preventDefault();
@@ -14,20 +17,24 @@ const RegisterAuth = () => {
         const photo = form.photo.value;
         const password = form.password.value;
         console.log({name,email,photo,password})
-        creatUser(email,password)
-        .then(result=>{
-            const user = result.user;
-            console.log(user);
+        creatUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+            toast.success("Successfully Registered");
+            navigate(location.state?.from || "/");
+          })
+          .catch((err) => {
+            console.log("Update Error:", err);
             setUser(user);
-            
-        })
-        .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage)
-    // ..
-  });
-    }
+          });
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
     return (
         <div className='flex justify-center '>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
