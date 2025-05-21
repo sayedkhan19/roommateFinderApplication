@@ -14,11 +14,14 @@ const DetailsRoom = () => {
   };
     return (
        <div className="card bg-base-100  shadow-sm">
-  <figure className="px-10 pt-10">
+        <p className="text-2xl font-semibold ml-10 ">
+        {likesCount} people interested in
+      </p>
+  <figure className="px-10 pt-2">
     <img
       src={photoUrl}
       alt="Shoes"
-      className="rounded-xl" />
+      className="rounded-xl h-[300px] w-[406px]" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">{title}</h2>
@@ -39,19 +42,19 @@ const DetailsRoom = () => {
         <h1> Name: {userName}</h1>
     </div>
     <h1>Description: {description}</h1>
-     <p className="text-lg font-semibold mb-2">
-        {likesCount} people interested in
-      </p>
-     {showContact && (
-  <div className="text-md font-medium text-gray-800">
-    📞 Contact Number: {contactInfo}
-  </div>
-)}
+     
+     
    
    
     <div className="card-actions">
       <button onClick={handleLike} className="btn btn-primary">Like</button>
+
     </div>
+    {showContact && (
+  <div className="text-md font-medium text-gray-800">
+    📞 Contact Number: {contactInfo}
+  </div>
+)}
   </div>
 </div>
     );

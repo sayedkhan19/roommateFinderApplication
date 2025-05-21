@@ -33,12 +33,12 @@ const LoadRooms = () => {
             {/* Text Section */}
             <div className="w-1/2 flex flex-col justify-between">
               <div>
-                <h2 className="text-xl font-bold">{room.title || "Room Title"}</h2>
+                <h2 className="lg:text-xl font-bold">{room.title || "Room Title"}</h2>
                 <p className="text-sm mt-1 line-clamp-4">
                   {room.description || "No description available."}
                 </p>
               </div>
-              <NavLink to={`/detailsroom/${room._id}`} className="btn btn-primary w-full mt-2">View Details</NavLink>
+              <NavLink to={`/detailsroom/${room._id}`} className="btn btn-primary lg:w-full mt-2">View Details</NavLink>
             </div>
           </div>
         ))}

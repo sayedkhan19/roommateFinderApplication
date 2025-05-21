@@ -18,7 +18,7 @@ const Navbar = () => {
       </li>
       
       <li>
-        <NavLink to={"/mylistings"}>My Listings</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/mylistings"}>My Listings</NavLink>
       </li>
       <li>
         <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/auth/login"}>Login</NavLink>
@@ -67,8 +67,8 @@ const Navbar = () => {
             </ul>
           </div>
           <div className='flex gap-2 justify-center items-center'>
-            <a className="btn btn-ghost text-xl">daisyUI</a>
-            <h1>{user && user.email}</h1>
+            <a className="btn btn-ghost text-xl hidden md:hidden lg:block">daisyUI</a>
+            <h1 className='hidden lg:block md:hidden'>{user && user.email}</h1>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">

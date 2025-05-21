@@ -1,14 +1,34 @@
 import React from 'react';
 
 const AddRoommate = () => {
-    const handleFindRoom = e=>{
+    const handleFindRoom = e =>{
+        e.preventDefault();
 
+        const form = e.target;
+        const fromData = new FormData(form);
+        const newRoom = Object.fromEntries(fromData.entries());
+        console.log(newRoom);
+
+        // db
+        fetch('',{
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(newRoom)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log("after post data:",data)
+        })
+        
     }
     return (
-        <div className='p-24 text-center'>
+        
+        <div className=' text-center'>
             <div className='p-12 space-y-4'>
-                <h1 className='text-3xl font-bold'>Add Coffe</h1>
-            <p className='text-center'>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+                <h1 className='text-3xl font-bold'>Find Room</h1>
+            
             </div>
 
         <form onSubmit={handleFindRoom} >
@@ -78,7 +98,7 @@ const AddRoommate = () => {
   <input type="text" className="input w-full" name='photoUrl' placeholder="photo Url" />
   </fieldset>
 
-<input className='w-full btn' type="submit" value="Add Coffe" />
+<input className='w-full btn' type="submit" value="Add Post" />
 </form>
         </div>
     );
