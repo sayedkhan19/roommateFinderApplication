@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router';
 
 const DetailsRoom = () => {
     const roomdeatils = useLoaderData();
     const {_id,title,location,rent,roomType,lifestylePreferences,description,contactInfo,availability,userEmail,userName,likeCount,photoUrl} = roomdeatils || {};
     console.log(roomdeatils)
-   
+   const [likesCount, setLikesCount] = useState(0);
+  const [showContact, setShowContact] = useState(false);
+
+  const handleLike = () => {
+    setLikesCount(prev => prev + 1);    
+    setShowContact(true);               
+  };
     return (
        <div className="card bg-base-100  shadow-sm">
   <figure className="px-10 pt-10">
@@ -25,7 +31,7 @@ const DetailsRoom = () => {
     </div>
    <div className='flex flex-col md:flex-row gap-5 font-semibold'>
      <h1>LifestylePreferences: {lifestylePreferences}</h1>
-    <h1>Contat: {contactInfo}</h1>
+    
     <h1>availability: {availability}</h1>
    </div>
     <div className='flex flex-col md:flex-row gap-5 font-semibold'>
@@ -33,11 +39,18 @@ const DetailsRoom = () => {
         <h1> Name: {userName}</h1>
     </div>
     <h1>Description: {description}</h1>
-    <h1>{likeCount}</h1>
+     <p className="text-lg font-semibold mb-2">
+        {likesCount} people interested in
+      </p>
+     {showContact && (
+  <div className="text-md font-medium text-gray-800">
+    📞 Contact Number: {contactInfo}
+  </div>
+)}
    
    
     <div className="card-actions">
-      <button className="btn btn-primary">Buy Now</button>
+      <button onClick={handleLike} className="btn btn-primary">Like</button>
     </div>
   </div>
 </div>
