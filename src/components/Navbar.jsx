@@ -11,14 +11,14 @@ const Navbar = () => {
         <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/"}>Home</NavLink>
       </li>
       <li>
-        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"gdfs"}>Find Roommate</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/addlisting"}>Find Roommate</NavLink>
       </li>
       <li>
-        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"fgs"}>Browse Listings</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/browsiniglisting"}>Browse Listings</NavLink>
       </li>
       
       <li>
-        <NavLink to={""}>My Listings</NavLink>
+        <NavLink to={"/mylistings"}>My Listings</NavLink>
       </li>
       <li>
         <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/auth/login"}>Login</NavLink>

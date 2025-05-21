@@ -9,6 +9,9 @@ import Auth from "../pages2/Auth";
 import LoginAuth from "../pages2/LoginAuth";
 import RegisterAuth from "../pages2/RegisterAuth";
 import PrivateRoutes from "../ptovider/PrivateRoutes";
+import BrowsingListing from "../pages/BrowsingListing";
+import MyListing from "../pages/MyListing";
+import AddRoommate from "../pages2/AddRoommate";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +40,20 @@ export const router = createBrowserRouter([
           </PrivateRoutes>,
           loader:({params})=> fetch(`http://localhost:3000/rooms/${params.id}`),
           hydrateFallbackElement:<span className="loading loading-bars loading-xl"></span>,
+        },
+        {
+          path:"/browsiniglisting",
+          Component:BrowsingListing,
+        },
+        {
+          path:'/mylistings',
+          element:<PrivateRoutes>
+            <MyListing></MyListing>
+          </PrivateRoutes>,
+        },
+        {
+          path:"/addlisting",
+          Component:AddRoommate,
         }
     ]
   },
