@@ -4,13 +4,16 @@ import RoomCard from '../pages/RoomCard';
 import LoadRooms from '../components/LoadRooms';
 import ExtraSectionCount from '../pages/ExtraSectionCount';
 import BestWe from '../pages/BestWe';
+import Hero from '../pages/Hero';
 
 const Home = () => {
     return (
         <div className='bg-[ #F2F8FC]'>
-           {/* <div className='slider'>
+           <div className='slider'>
                 <Slider></Slider>
-           </div> */}
+           </div>
+           
+          
 
            <div>
                 <LoadRooms></LoadRooms>
@@ -18,7 +21,9 @@ const Home = () => {
 
           
           
-          
+           <div>
+            <Hero></Hero>
+           </div>
           
            <div>
             <ExtraSectionCount></ExtraSectionCount>

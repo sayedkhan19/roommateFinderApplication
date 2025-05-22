@@ -13,7 +13,7 @@ const DetailsRoom = () => {
     setShowContact(true);               
   };
     return (
-       <div className="card bg-base-100  shadow-sm">
+       <div className="card bg-base-100  shadow-sm bg-[#F2F8FC]">
         <p className="text-2xl font-semibold ml-10 ">
         {likesCount} people interested in
       </p>

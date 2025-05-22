@@ -14,11 +14,12 @@ const BrowsingListing = () => {
       })
       .catch(err => {
         console.error(err);
+
         setLoading(false);
       });
     },[])
     return (
-          <div className="overflow-x-auto p-5">
+          <div className="overflow-x-auto p-5 bg-[#F2F8FC]">
       <h1 className="text-2xl font-semibold mb-4">Browse Roommate Listings</h1>
       <table className="table w-full">
         <thead>

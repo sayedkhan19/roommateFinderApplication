@@ -6,7 +6,7 @@ const Auth = () => {
     return (
         <div className='w-11/12 mx-auto'>
             <Navbar></Navbar>
-            auth layoput
+            
             <Outlet></Outlet>
         </div>
     );
