@@ -18,7 +18,7 @@ const Navbar = () => {
       </li>
       
       <li>
-        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/mylistings"}>My Listings</NavLink>
+        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/usergetall"}>My Listings</NavLink>
       </li>
       <li>
         <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/auth/login"}>Login</NavLink>

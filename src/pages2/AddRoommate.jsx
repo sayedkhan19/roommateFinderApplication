@@ -22,9 +22,12 @@ const AddRoommate = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log("after post data:",data)
-            toast.success("User add post")
+            toast.success("User added post")
         })
-        
+        .catch(error => {
+         console.error("Error posting user:", error);
+         toast.error("Failed to post user");
+});
     }
     return (
         
@@ -49,7 +52,7 @@ const AddRoommate = () => {
     
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">Rent</label>
-  <input type="text" className="input w-full" name='rent' placeholder="rent" required/>
+  <input type="number" className="input w-full" name='rent' placeholder="rent will number" required/>
   </fieldset>
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
@@ -69,7 +72,7 @@ const AddRoommate = () => {
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">contactInfo</label>
-  <input type="text" className="input w-full" name='contactInfo' placeholder="contactInfo" required/>
+  <input type="number" className="input w-full" name='contactInfo' placeholder="Mobile number" required/>
   </fieldset>
   
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
@@ -79,12 +82,12 @@ const AddRoommate = () => {
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">userEmail</label>
-  <input type="text" className="input w-full" defaultValue={user?.email} name='userEmail' readOnly placeholder="userEmail" required/>
+  <input type="email" className="input w-full"  name='userEmail'  placeholder="userEmail" required/>
   </fieldset>
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">userName</label>
-  <input type="text" className="input w-full" name='userName'  placeholder="userName" readOnly defaultValue={user?.displayName}/>
+  <input type="text" className="input w-full" name='userName'  placeholder="userName"  required/>
   </fieldset>
   
     

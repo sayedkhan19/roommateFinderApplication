@@ -12,6 +12,7 @@ import PrivateRoutes from "../ptovider/PrivateRoutes";
 import BrowsingListing from "../pages/BrowsingListing";
 import MyListing from "../pages/MyListing";
 import AddRoommate from "../pages2/AddRoommate";
+import UsersGetAll from "../pages2/UsersGetAll";
 
 export const router = createBrowserRouter([
   {
@@ -45,15 +46,14 @@ export const router = createBrowserRouter([
           path:"/browsiniglisting",
           Component:BrowsingListing,
         },
-        {
-          path:'/mylistings',
-          element:<PrivateRoutes>
-            <MyListing></MyListing>
-          </PrivateRoutes>,
-        },
+        
         {
           path:"/addlisting",
           Component:AddRoommate,
+        },
+        {
+          path:'/usergetall',
+          element:<UsersGetAll></UsersGetAll>,
         }
     ]
   },
