@@ -13,6 +13,7 @@ import BrowsingListing from "../pages/BrowsingListing";
 import MyListing from "../pages/MyListing";
 import AddRoommate from "../pages2/AddRoommate";
 import UsersGetAll from "../pages2/UsersGetAll";
+import UpdateUser from "../pages2/UpdateUser";
 
 export const router = createBrowserRouter([
   {
@@ -49,11 +50,22 @@ export const router = createBrowserRouter([
         
         {
           path:"/addlisting",
-          Component:AddRoommate,
+          element:<PrivateRoutes>
+            <AddRoommate></AddRoommate>
+          </PrivateRoutes>,
         },
         {
           path:'/usergetall',
           element:<UsersGetAll></UsersGetAll>,
+        },
+        {
+          path:"/updateuser/:id",
+          element:<PrivateRoutes>
+            <UpdateUser></UpdateUser>
+          </PrivateRoutes>,
+          loader: ({params}) => fetch(`http://localhost:3000/users/${params.id}`),
+          hydrateFallbackElement:<span className="loading loading-bars loading-lg"></span>,
+
         }
     ]
   },

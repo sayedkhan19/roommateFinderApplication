@@ -3,13 +3,21 @@ import { NavLink } from "react-router";
 
 const LoadRooms = () => {
   const [rooms, setRooms] = useState([]);
-
+ const [load ,setLoad] = useState(true);
   useEffect(() => {
     fetch("http://localhost:3000/rooms")
       .then((res) => res.json())
-      .then((data) => setRooms(data))
+      .then((data) => {
+        setRooms(data)
+        setLoad(false);
+      })
       .catch((error) => console.error("Error fetching rooms:", error));
+      setLoad(false);
   }, []);
+
+  if(load){
+  return  <span className="loading loading-bars loading-xl"></span>
+  }
 
   return (
     <div className="mt-5 p-4">

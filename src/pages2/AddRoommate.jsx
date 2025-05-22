@@ -52,7 +52,7 @@ const AddRoommate = () => {
     
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">Rent</label>
-  <input type="number" className="input w-full" name='rent' placeholder="rent will number" required/>
+  <input type="text" className="input w-full" name='rent' placeholder="rent" required/>
   </fieldset>
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
@@ -72,7 +72,7 @@ const AddRoommate = () => {
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">contactInfo</label>
-  <input type="number" className="input w-full" name='contactInfo' placeholder="Mobile number" required/>
+  <input type="text" className="input w-full" name='contactInfo' placeholder="Mobile number" required/>
   </fieldset>
   
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
@@ -82,12 +82,12 @@ const AddRoommate = () => {
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">userEmail</label>
-  <input type="email" className="input w-full"  name='userEmail'  placeholder="userEmail" required/>
+  <input type="email" className="input w-full" defaultValue={user?.email} readOnly name='userEmail'  placeholder="userEmail" required/>
   </fieldset>
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">userName</label>
-  <input type="text" className="input w-full" name='userName'  placeholder="userName"  required/>
+  <input type="text" className="input w-full" name='userName' readOnly  placeholder="userName" defaultValue={user?.displayName}  required/>
   </fieldset>
   
     

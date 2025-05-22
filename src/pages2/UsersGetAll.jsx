@@ -1,4 +1,5 @@
 import React, {useEffect, useState } from 'react';
+import { NavLink } from 'react-router';
 import Swal from 'sweetalert2';
 
 
@@ -12,7 +13,7 @@ const UsersGetAll = () => {
       .then(data => setGetUser(data))
       .catch((error) => console.error("Error fetching users:", error));
   }, []);
-
+console.log(getUser)
 const handleDelete = (id) =>{
     Swal.fire({
   title: "Are you sure?",
@@ -59,7 +60,7 @@ const handleDelete = (id) =>{
               <th>Location & Email</th>
               <th>Title</th>
               <th>Room Type & Rent</th>
-              <th>Details Update Delete</th>
+              <th>Update & Delete</th>
             </tr>
           </thead>
 
@@ -86,8 +87,8 @@ const handleDelete = (id) =>{
                     <div>{user.rent} Tk</div>
                 </td>
                 <td>
-                  <button className="btn btn-ghost btn-xs">Details</button>
-                  <button className="btn btn-ghost btn-xs">Update</button>
+                  
+                  <NavLink to={`/updateuser/${user._id}`}  className="btn btn-ghost btn-xs">Update</NavLink>
                   <button onClick={()=>handleDelete(user._id)} className="btn btn-ghost btn-xs">X</button>
                 </td>
               </tr>
