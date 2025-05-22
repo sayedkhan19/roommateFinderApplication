@@ -84,10 +84,7 @@ const AddRoommate = () => {
   <input type="text" className="input w-full" name='userName' placeholder="userName" required/>
   </fieldset>
   
-    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
-  <label className="label">likeCount</label>
-  <input type="text" className="input w-full" name='likeCount' placeholder="likeCount" required/>
-  </fieldset>
+    
 
   
   </div>
