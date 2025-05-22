@@ -2,6 +2,8 @@ import React from 'react';
 import Slider from '../components/Slider';
 import RoomCard from '../pages/RoomCard';
 import LoadRooms from '../components/LoadRooms';
+import ExtraSectionCount from '../pages/ExtraSectionCount';
+import BestWe from '../pages/BestWe';
 
 const Home = () => {
     return (
@@ -18,8 +20,13 @@ const Home = () => {
           
           
           
-           <div></div>
-           <div></div>
+           <div>
+            <ExtraSectionCount></ExtraSectionCount>
+           </div>
+          
+           <div>
+            <BestWe></BestWe>
+           </div>
         
         
         </div>

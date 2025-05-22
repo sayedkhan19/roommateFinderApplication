@@ -20,17 +20,17 @@ const LoadRooms = () => {
   }
 
   return (
-    <div className="mt-5 p-4">
+    <div className="mt-5 p-4 bg-[#F2F8FC]">
       <h1 className="text-2xl font-bold mb-6">Total Rooms: {rooms.length}</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         {rooms.map((room) => (
           <div
             key={room._id}
-            className="border rounded-xl shadow-lg p-4 h-[300px] w-full flex gap-4 overflow-hidden"
+            className="bg-[#F8F8F8] rounded-xl shadow-2xl p-4 h-[300px] w-full flex gap-4 overflow-hidden"
           >
             {/* Image Section */}
-            <div className="h-full w-1/2 overflow-hidden rounded-xl">
+            <div className="h-full w-1/2 overflow-hidden rounded-xl transition hover:shadow-xl">
               <img
                 src={room.photoUrl}
                 alt={room.title}

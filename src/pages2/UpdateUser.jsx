@@ -50,7 +50,7 @@ const UpdateUser = () => {
   return (
     <div className=" text-center">
       <div className="p-12 space-y-4">
-        <h1 className="text-3xl font-bold">Find Room</h1>
+        <h1 className="text-3xl font-bold">Update Roommate</h1>
       </div>
 
       <form onSubmit={handleUpdate}>
