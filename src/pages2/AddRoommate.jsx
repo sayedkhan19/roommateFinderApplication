@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { use } from 'react';
+import { AuthContext } from '../ptovider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const AddRoommate = () => {
+    const {user} = use(AuthContext)
     const handleFindRoom = e =>{
         e.preventDefault();
-
         const form = e.target;
         const fromData = new FormData(form);
         const newRoom = Object.fromEntries(fromData.entries());
         console.log(newRoom);
 
         // db
-        fetch('',{
+        fetch('http://localhost:3000/users',{
             method:"POST",
             headers:{
                 "content-type":"application/json"
@@ -20,6 +22,7 @@ const AddRoommate = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log("after post data:",data)
+            toast.success("User add post")
         })
         
     }
@@ -76,12 +79,12 @@ const AddRoommate = () => {
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">userEmail</label>
-  <input type="text" className="input w-full" name='userEmail' placeholder="userEmail" required/>
+  <input type="text" className="input w-full" defaultValue={user?.email} name='userEmail' readOnly placeholder="userEmail" required/>
   </fieldset>
    
     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
   <label className="label">userName</label>
-  <input type="text" className="input w-full" name='userName' placeholder="userName" required/>
+  <input type="text" className="input w-full" name='userName'  placeholder="userName" readOnly defaultValue={user?.displayName}/>
   </fieldset>
   
     
