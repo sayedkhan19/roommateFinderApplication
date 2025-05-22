@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { useLoaderData } from "react-router";
 
 const UpdateUser = () => {
@@ -25,6 +26,22 @@ const UpdateUser = () => {
     const formData = new FormData(form);
     const updatedUser = Object.fromEntries(formData.entries());
     console.log((updatedUser));
+
+    fetch(`http://localhost:3000/users/${_id}`,{
+        method:"PUT",
+        headers:{
+            "content-type":"application/json"
+        },
+        body:JSON.stringify(updatedUser)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+        toast.success("Updated post")
+    })
+    .catch(error=>{
+        toast.error(error.message || "Update failed");
+    })
     
   };
   if (!allUser) {
@@ -162,7 +179,7 @@ const UpdateUser = () => {
           />
         </fieldset>
 
-        <input className="w-full btn" type="submit" value="Add Post" />
+        <input className="w-full btn" type="submit" value="Update Post" />
       </form>
     </div>
   );
