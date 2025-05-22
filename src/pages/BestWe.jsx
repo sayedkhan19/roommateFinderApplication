@@ -26,7 +26,7 @@ const features = [
   },
 ];
     return (
-        <section className="py-12 bg-white">
+        <section className="py-12 bg-[#F2F8FC]">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-6">Why Choose Us?</h2>
         <p className="text-gray-600 mb-10">Discover what makes us the best platform for finding your perfect roommate.</p>

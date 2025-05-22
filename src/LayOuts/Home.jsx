@@ -7,7 +7,7 @@ import BestWe from '../pages/BestWe';
 
 const Home = () => {
     return (
-        <div>
+        <div className='bg-[ #F2F8FC]'>
            {/* <div className='slider'>
                 <Slider></Slider>
            </div> */}

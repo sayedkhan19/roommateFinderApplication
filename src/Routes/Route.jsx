@@ -14,6 +14,7 @@ import MyListing from "../pages/MyListing";
 import AddRoommate from "../pages2/AddRoommate";
 import UsersGetAll from "../pages2/UsersGetAll";
 import UpdateUser from "../pages2/UpdateUser";
+import DetalsPageOr from "../pages/DetalsPageOr";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,12 @@ export const router = createBrowserRouter([
           path:"/browsiniglisting",
           Component:BrowsingListing,
         },
+        {
+            path:"/detalsPageOr/:id",
+            element:<PrivateRoutes><DetalsPageOr></DetalsPageOr></PrivateRoutes>,
+            loader:({params})=> fetch(`http://localhost:3000/rooms/${params.id}`),
+            hydrateFallbackElement:<span className="loading loading-bars loading-xl"></span>,
+        },
         
         {
           path:"/addlisting",
@@ -56,7 +63,9 @@ export const router = createBrowserRouter([
         },
         {
           path:'/usergetall',
-          element:<UsersGetAll></UsersGetAll>,
+          element:<PrivateRoutes>
+            <UsersGetAll></UsersGetAll>
+          </PrivateRoutes>,
         },
         {
           path:"/updateuser/:id",

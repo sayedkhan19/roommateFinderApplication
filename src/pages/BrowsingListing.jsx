@@ -38,7 +38,7 @@ const BrowsingListing = () => {
               <td>{room.rent}</td>
               <td>{room.roomType}</td>
               <td>
-                <Link to={`/details/${room._id}`}>
+                <Link to={`/detalsPageOr/${room._id}`}>
                   <button className="btn btn-sm btn-outline">See More</button>
                 </Link>
               </td>
