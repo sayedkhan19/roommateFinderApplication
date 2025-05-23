@@ -13,7 +13,7 @@ const UsersGetAll = () => {
       .then(data => setGetUser(data))
       .catch((error) => console.error("Error fetching users:", error));
   }, []);
-console.log(getUser)
+// console.log(getUser)
 const handleDelete = (id) =>{
     Swal.fire({
   title: "Are you sure?",

@@ -6,7 +6,7 @@ const RoomCard = () => {
         const form = e.target;
         const fromData = new FormData(form);
         const newRoom = Object.fromEntries(fromData.entries());
-        console.log(newRoom);
+        // console.log(newRoom);
 
         // db
         fetch('http://localhost:3000/rooms',{

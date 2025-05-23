@@ -3,7 +3,7 @@ import { useLoaderData, useLocation, useNavigate } from "react-router";
 
 const UpdateUser = () => {
   const allUser = useLoaderData();
-  const locations = useLocation()
+  const location = useLocation()
   const navigate = useNavigate();
 //   console.log(allUser);
   const {
@@ -27,7 +27,7 @@ const UpdateUser = () => {
     const form = e.target;
     const formData = new FormData(form);
     const updatedUser = Object.fromEntries(formData.entries());
-    console.log((updatedUser));
+    // console.log((updatedUser));
 
     fetch(`http://localhost:3000/users/${_id}`,{
         method:"PUT",

@@ -10,7 +10,7 @@ const RegisterAuth = () => {
 
     const handleRegister = e =>{
         e.preventDefault();
-        console.log(e.target);
+        // console.log(e.target);
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;

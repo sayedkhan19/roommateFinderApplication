@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router';
 const DetailsRoom = () => {
     const roomdeatils = useLoaderData();
     const {_id,title,location,rent,roomType,lifestylePreferences,description,contactInfo,availability,userEmail,userName,likeCount,photoUrl} = roomdeatils || {};
-    console.log(roomdeatils)
+    // console.log(roomdeatils)
    const [likesCount, setLikesCount] = useState(0);
   const [showContact, setShowContact] = useState(false);
 
