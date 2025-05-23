@@ -1,9 +1,12 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../ptovider/AuthProvider';
 import toast from 'react-hot-toast';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
-const Navbar = () => {
+
+const Navbar = ({theme,setTheme}) => {
+  const [isDark, setIsDark] = useState(false);
   const {user,logOut} = use(AuthContext);
    const links = 
     <>
@@ -25,6 +28,7 @@ const Navbar = () => {
       </li>
       
       
+      
     </>
   const handleLogOut = () =>{
       logOut()
@@ -34,6 +38,11 @@ const Navbar = () => {
   toast.error(error)
 });
   }
+
+const toggle = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+    setIsDark(prev => !prev);
+  };
 
   return (
     <div>
@@ -66,7 +75,7 @@ const Navbar = () => {
           </div>
           <div className='flex gap-2 justify-center items-center'>
             <a className="btn btn-ghost text-xl hidden md:hidden lg:block">Roommmate</a>
-            <h1 className='hidden lg:block md:hidden'>{user && user.email}</h1>
+            {/* <h1 className='hidden lg:block md:hidden'>{user && user.email}</h1> */}
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -74,7 +83,15 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className='flex flex-row gap-2 justify-center items-center'>
-            <input type="checkbox" defaultChecked className="toggle" />
+            
+             <button onClick={toggle} className='cursor-pointer flex items-center gap-2'>
+            {isDark ? <FaMoon className="text-xl" /> : <FaSun className="text-xl" />}
+    
+          </button>
+           
+           
+           
+           
             {user && (
               <img
                 className="rounded-full w-10 h-10 object-cover cursor-pointer"
@@ -95,6 +112,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

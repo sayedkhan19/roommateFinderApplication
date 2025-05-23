@@ -16,6 +16,7 @@ import UsersGetAll from "../pages2/UsersGetAll";
 import UpdateUser from "../pages2/UpdateUser";
 import DetalsPageOr from "../pages/DetalsPageOr";
 
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -67,6 +68,7 @@ export const router = createBrowserRouter([
             <UsersGetAll></UsersGetAll>
           </PrivateRoutes>,
         },
+        
         {
           path:"/updateuser/:id",
           element:<PrivateRoutes>
