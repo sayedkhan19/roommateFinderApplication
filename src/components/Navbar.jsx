@@ -24,9 +24,7 @@ const Navbar = () => {
         <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/auth/login"}>Login</NavLink>
       </li>
       
-      <li>
-        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/room"}>faltu</NavLink>
-      </li>
+      
     </>
   const handleLogOut = () =>{
       logOut()
@@ -67,7 +65,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className='flex gap-2 justify-center items-center'>
-            <a className="btn btn-ghost text-xl hidden md:hidden lg:block">daisyUI</a>
+            <a className="btn btn-ghost text-xl hidden md:hidden lg:block">Roommmate</a>
             <h1 className='hidden lg:block md:hidden'>{user && user.email}</h1>
           </div>
         </div>
@@ -76,6 +74,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className='flex flex-row gap-2 justify-center items-center'>
+            <input type="checkbox" defaultChecked className="toggle" />
             {user && (
               <img
                 className="rounded-full w-10 h-10 object-cover cursor-pointer"

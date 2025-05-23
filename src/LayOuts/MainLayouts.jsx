@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 const MainLayouts = () => {
     const {state} = useNavigation();
     return (
-        <div className='w-11/12 mx-auto bg-[#F2F8FC]'>
+        <div className='w-11/12 mx-auto '>
             <Navbar></Navbar>
             {import.meta.env.VITE_name}
             

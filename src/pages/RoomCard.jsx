@@ -25,8 +25,8 @@ const RoomCard = () => {
   return (
     <div className='p-24 text-center'>
             <div className='p-12 space-y-4'>
-                <h1 className='text-3xl font-bold'>Add Coffe</h1>
-            <p className='text-center'>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+                <h1 className='text-3xl font-bold'>Add Roommate</h1>
+            
             </div>
 
         <form onSubmit={handleRooms} >
@@ -96,7 +96,7 @@ const RoomCard = () => {
   <input type="text" className="input w-full" name='photoUrl' placeholder="photo Url" />
   </fieldset>
 
-<input className='w-full btn' type="submit" value="Add Coffe" />
+<input className='w-full btn' type="submit" value="Add" />
 </form>
         </div>
     

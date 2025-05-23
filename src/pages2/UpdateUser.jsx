@@ -1,13 +1,15 @@
 import toast from "react-hot-toast";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useLocation, useNavigate } from "react-router";
 
 const UpdateUser = () => {
   const allUser = useLoaderData();
-  console.log(allUser);
+  const locations = useLocation()
+  const navigate = useNavigate();
+//   console.log(allUser);
   const {
     _id,
     title,
-    location,
+    location:userLocation,
     rent,
     roomType,
     lifestylePreferences,
@@ -38,6 +40,7 @@ const UpdateUser = () => {
     .then(data=>{
         console.log(data);
         toast.success("Updated post")
+        navigate(`${location.state? location.state : "/usergetall"}`)
     })
     .catch(error=>{
         toast.error(error.message || "Update failed");
@@ -73,7 +76,7 @@ const UpdateUser = () => {
               className="input w-full"
               name="location"
               placeholder="Location"
-              defaultValue={location}
+              defaultValue={userLocation}
             />
           </fieldset>
 

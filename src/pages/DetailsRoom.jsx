@@ -21,7 +21,7 @@ const DetailsRoom = () => {
     <img
       src={photoUrl}
       alt="Shoes"
-      className="rounded-xl h-[300px] w-[406px]" />
+      className="rounded-xl h-[200px] w-[406px]" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">{title}</h2>
