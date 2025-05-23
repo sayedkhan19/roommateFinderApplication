@@ -8,38 +8,38 @@ const RegisterAuth = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const handleRegister = e =>{
-        e.preventDefault();
-        // console.log(e.target);
-        const form = e.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const photo = form.photo.value;
-        const password = form.password.value;
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-        // console.log({name,email,photo,password})
-        if (!passwordRegex.test(password)) {
-         toast.error("Password must be one uppercase one lowercase and leng 6 character")
-       }
-        creatUser(email, password)
-      .then((result) => {
-        const user = result.user;
-        updateUser({ displayName: name, photoURL: photo })
-          .then(() => {
-            setUser({ ...user, displayName: name, photoURL: photo });
-            toast.success("Successfully Registered");
-            navigate(location.state?.from || "/");
-          })
-          .catch((err) => {
-            console.log("Update Error:", err);
-            setUser(user);
-          });
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
-  };
+    const handleRegister = e => {
+  e.preventDefault();
+  const form = e.target;
+  const name = form.name.value;
+  const email = form.email.value;
+  const photo = form.photo.value;
+  const password = form.password.value;
 
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+  if (!passwordRegex.test(password)) {
+    toast.error("Password must contain at least 1 uppercase, 1 lowercase letter and be 6+ characters long.");
+    return; 
+  }
+
+  creatUser(email, password)
+    .then((result) => {
+      const user = result.user;
+      updateUser({ displayName: name, photoURL: photo })
+        .then(() => {
+          setUser({ ...user, displayName: name, photoURL: photo });
+          toast.success("Successfully Registered");
+          navigate(location.state?.from || "/");
+        })
+        .catch((err) => {
+          console.log("Update Error:", err);
+          setUser(user);
+        });
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+};
   const handlePopUp = ()=>{
       googlePopUp().then(result => {
       const user = result.user;
@@ -52,7 +52,7 @@ const RegisterAuth = () => {
     toast.error("Google sign-in was cancelled.");
   } else {
     toast.error("Google sign-in failed.");
-    console.error("Google login error:", error);
+    // console.error("Google login error:", error);
   }
 });
 
