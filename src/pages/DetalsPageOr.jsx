@@ -47,7 +47,7 @@ const DetalsPageOr = () => {
    
    
     <div className="card-actions">
-      <button onClick={handleLike} className="btn btn-primary">Like</button>
+      <button onClick={handleLike} className="btn btn-active btn-info">Like</button>
 
     </div>
     {showContact && (

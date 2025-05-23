@@ -6,7 +6,7 @@ const BrowsingListing = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(()=> {
-        fetch("http://localhost:3000/rooms")
+        fetch("https://orange-server-delta.vercel.app/rooms")
         .then(res => res.json())
       .then(data => {
         setRoommates(data);
@@ -20,6 +20,7 @@ const BrowsingListing = () => {
     },[])
     return (
           <div className="overflow-x-auto p-5 bg-[#F2F8FC]">
+            <title>Roomate || All Post</title>
       <h1 className="text-2xl font-semibold mb-4">Browse Roommate Listings</h1>
       <table className="table w-full">
         <thead>

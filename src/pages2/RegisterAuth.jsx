@@ -59,6 +59,7 @@ const RegisterAuth = () => {
   }
     return (
         <div className='flex justify-center bg-[#F2F8FC] p-5'>
+          <title>Roomate || Register</title>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
          <form onSubmit={handleRegister} className="card-body">
             <h1 className='text-3xl font-semibold'>Register your account</h1>

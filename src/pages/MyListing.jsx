@@ -9,7 +9,7 @@ const MyListing = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/userRooms?email=${user?.email}`)
+    fetch(`https://orange-server-delta.vercel.app/userRooms?email=${user?.email}`)
       .then(res => res.json())
       .then(data => {
         setMyListings(data);
@@ -20,7 +20,7 @@ const MyListing = () => {
   const handleDelete = (id) => {
     const confirm = window.confirm("Are you sure you want to delete?");
     if (confirm) {
-      fetch(`http://localhost:3000/userRooms/${id}`, {
+      fetch(`https://orange-server-delta.vercel.app/userRooms/${id}`, {
         method: "DELETE"
       })
         .then(res => res.json())
@@ -34,6 +34,7 @@ const MyListing = () => {
   if (loading) return <span className="loading loading-bars loading-xl"></span>;
     return (
          <div className="p-5">
+          <title>Roommate || My Listing</title>
       <h1 className="text-2xl font-bold mb-4">My Listings</h1>
       <table className="table">
         <thead>

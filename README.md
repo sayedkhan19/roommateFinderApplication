@@ -1,12 +1,46 @@
-# React + Vite
+# 🏠 Roommate Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and user-friendly web app to help you find the perfect roommate!
 
-Currently, two official plugins are available:
+🔗 **Live Site:** [https://orange-auth-project.web.app]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
 
-## Expanding the ESLint configuration
+- 🔐 Secure user registration and login system
+- 📝 Add, update, and delete your own roommate listings
+- 📋 View your listings in a clean and organized table format
+- 🌗 Light/Dark theme toggle for better user experience
+- 📍 Filter listings by location, lifestyle, rent, and room type
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💡 Technologies Used
+
+- React.js
+- MongoDB + Express.js (Backend)
+- Tailwind CSS
+- daisy Ui
+- React Router
+- Sweet alert2
+- hotToast 
+- React icons
+- Lucid icons
+- Lottie React 
+- React-simple-typewriter 
+- React-simple-typewriter 
+- React-simple-typewriter 
+- Swiper slider
+
+
+
+
+
+
+## 📂 How to Use
+
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Start the backend server and frontend app.
+4. Visit the live site or run locally.
+
+---
+
+Created with ❤️ for people looking for the right roommates!

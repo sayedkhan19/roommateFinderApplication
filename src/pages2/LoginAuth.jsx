@@ -43,6 +43,7 @@ const handlePopUp = ()=>{
     
     return (
          <div className='flex justify-center bg-[#F2F8FC] py-10'>
+          <title>Roomate || Login</title>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
          <form onSubmit={handleLogin} className="card-body">
             <h1 className='text-3xl font-semibold'>Login your account</h1>

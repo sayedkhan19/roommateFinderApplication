@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
           element:<PrivateRoutes>
             <DetailsRoom></DetailsRoom>
           </PrivateRoutes>,
-          loader:({params})=> fetch(`http://localhost:3000/rooms/${params.id}`),
+          loader:({params})=> fetch(`https://orange-server-delta.vercel.app/rooms/${params.id}`),
           hydrateFallbackElement:<span className="loading loading-bars loading-xl"></span>,
         },
         {
@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
         {
             path:"/detalsPageOr/:id",
             element:<PrivateRoutes><DetalsPageOr></DetalsPageOr></PrivateRoutes>,
-            loader:({params})=> fetch(`http://localhost:3000/rooms/${params.id}`),
+            loader:({params})=> fetch(`https://orange-server-delta.vercel.app/rooms/${params.id}`),
             hydrateFallbackElement:<span className="loading loading-bars loading-xl"></span>,
         },
         
@@ -72,7 +72,7 @@ export const router = createBrowserRouter([
           element:<PrivateRoutes>
             <UpdateUser></UpdateUser>
           </PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:3000/users/${params.id}`),
+          loader: ({params}) => fetch(`https://orange-server-delta.vercel.app/users/${params.id}`),
           hydrateFallbackElement:<span className="loading loading-bars loading-lg"></span>,
 
         }

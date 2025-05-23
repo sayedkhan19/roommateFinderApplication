@@ -29,7 +29,7 @@ const UpdateUser = () => {
     const updatedUser = Object.fromEntries(formData.entries());
     // console.log((updatedUser));
 
-    fetch(`http://localhost:3000/users/${_id}`,{
+    fetch(`https://orange-server-delta.vercel.app/users/${_id}`,{
         method:"PUT",
         headers:{
             "content-type":"application/json"
@@ -52,6 +52,7 @@ const UpdateUser = () => {
   }
   return (
     <div className=" text-center">
+      <title>Roomate || Update</title>
       <div className="p-12 space-y-4">
         <h1 className="text-3xl font-bold">Update Roommate</h1>
       </div>

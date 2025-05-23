@@ -9,7 +9,7 @@ const RoomCard = () => {
         // console.log(newRoom);
 
         // db
-        fetch('http://localhost:3000/rooms',{
+        fetch('https://orange-server-delta.vercel.app/rooms',{
             method:"POST",
             headers:{
                 "content-type":"application/json"

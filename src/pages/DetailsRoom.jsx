@@ -14,6 +14,7 @@ const DetailsRoom = () => {
   };
     return (
        <div className="card bg-base-100  shadow-sm bg-[#F2F8FC]">
+        <title>Roomate || Details</title>
         <p className="text-2xl font-semibold ml-10 ">
         {likesCount} people interested in
       </p>
@@ -47,7 +48,7 @@ const DetailsRoom = () => {
    
    
     <div className="card-actions">
-      <button onClick={handleLike} className="btn btn-primary">Like</button>
+      <button onClick={handleLike} className="btn btn-active btn-info">Like</button>
 
     </div>
     {showContact && (

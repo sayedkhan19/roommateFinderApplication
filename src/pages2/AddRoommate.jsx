@@ -12,7 +12,7 @@ const AddRoommate = () => {
         // console.log(newRoom);
 
         // db
-        fetch('http://localhost:3000/users',{
+        fetch('https://orange-server-delta.vercel.app/users',{
             method:"POST",
             headers:{
                 "content-type":"application/json"
@@ -32,6 +32,7 @@ const AddRoommate = () => {
     return (
         
         <div className=' text-center'>
+          <title>Roomate || Add</title>
             <div className='p-12 space-y-4'>
                 <h1 className='text-3xl font-bold'>Find Room</h1>
             

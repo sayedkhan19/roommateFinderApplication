@@ -9,6 +9,7 @@ import Hero from '../pages/Hero';
 const Home = () => {
     return (
         <div className='bg-[ #F2F8FC]'>
+            <title>Roomate || Home</title>
            <div className='slider'>
                 <Slider></Slider>
            </div>

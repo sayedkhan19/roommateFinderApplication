@@ -8,7 +8,7 @@ const UsersGetAll = () => {
   
 
   useEffect(() => {
-    fetch('http://localhost:3000/users')
+    fetch('https://orange-server-delta.vercel.app/users')
       .then(res => res.json())
       .then(data => setGetUser(data))
       .catch((error) => console.error("Error fetching users:", error));
@@ -25,7 +25,7 @@ const handleDelete = (id) =>{
   confirmButtonText: "Yes, delete it!"
 }).then((result) => {
   if (result.isConfirmed) {
-    fetch(`http://localhost:3000/users/${id}`,{
+    fetch(`https://orange-server-delta.vercel.app/users/${id}`,{
         method:"DELETE"
     })
     .then(res=> res.json())
@@ -51,6 +51,8 @@ const handleDelete = (id) =>{
 
   return (
     <div className="w-full px-2 md:px-6 lg:px-12 py-6">
+      <title>Roomate || All</title>
+      <title>Roommate || Update</title>
       <div className="overflow-x-auto">
         <table className="table w-full min-w-[800px]">
           {/* Table Head */}
