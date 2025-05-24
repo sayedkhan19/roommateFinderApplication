@@ -23,9 +23,16 @@ const Navbar = ({theme,setTheme}) => {
       <li>
         <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/usergetall"}>My Listings</NavLink>
       </li>
-      <li>
-        <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/auth/login"}>Login</NavLink>
-      </li>
+      {!user && (
+  <>
+    <li>
+      <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/auth/login"}>Login</NavLink>
+    </li>
+    <li>
+      <NavLink className={({ isActive }) => (isActive ? "border-2 font-bold" : "font-semibold text-gray-500")} to={"/auth/register"}>Signup</NavLink>
+    </li>
+  </>
+)}
       
       
       
