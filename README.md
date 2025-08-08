@@ -4,6 +4,8 @@ A simple and user-friendly web app to help you find the perfect roommate!
 
 🔗 **Live Site:** [https://orange-auth-project.web.app]
 
+This aoplication use can anyone .It actually user can find roommate also user can post for roommate. user can add their how he want location room details room type all details also he can see . He can delete hos own add room and can manage.
+
 ## ✨ Key Features
 
 - 🔐 Secure user registration and login system
